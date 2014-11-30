@@ -1,4 +1,4 @@
-module Problem8 where
+module Problem9 where
 
 import Test.Hspec
 import Control.Exception
