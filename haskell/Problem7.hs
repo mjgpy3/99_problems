@@ -7,7 +7,7 @@ data NestedList a = Elem a | List [NestedList a]
 
 flatten x = case x of
   Elem a -> [a]
-  List xs -> foldl (\x y -> x ++ flatten y) [] xs
+  List xs -> foldl (\x -> (x ++).flatten) [] xs
 
 main :: IO ()
 main = hspec $ do
