@@ -3,9 +3,7 @@ module Problem8 where
 import Test.Hspec
 import Control.Exception
 
-compress (x:y:xs) 
-  | x == y    = compress (y:xs)
-  | otherwise = x:compress (y:xs)
+compress (x:y:xs) = if x == y then compress (y:xs) else x:compress (y:xs)
 compress xs = xs
 
 main :: IO ()
