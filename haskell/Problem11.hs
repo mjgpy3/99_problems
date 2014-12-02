@@ -14,6 +14,6 @@ encodeModified = aux.encode
 
 main :: IO ()
 main = hspec $ do
-  describe "encode" $ do
+  describe "encodeModified" $ do
     it "goin' for the gold!" $ do
       encodeModified "aaaabccaadeeee" `shouldBe` [Multiple 4 'a',Single 'b',Multiple 2 'c', Multiple 2 'a',Single 'd',Multiple 4 'e']
