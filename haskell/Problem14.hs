@@ -3,8 +3,7 @@ module Problem14 where
 import Test.Hspec
 import Control.Exception
 
-dupli [] = []
-dupli (x:xs) = x:x:dupli xs
+dupli xs = concat $ map (repeat 2) xs
 
 main :: IO ()
 main = hspec $ do
