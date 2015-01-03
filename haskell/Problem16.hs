@@ -2,11 +2,8 @@ module Problem16 where
 
 import Test.Hspec
 
-
-dropEvery xs n = aux xs n
-  where aux [] _ = []
-        aux (x:xs) 1 = aux xs n
-        aux (x:xs) n' = x:aux xs (n' - 1)
+dropEvery xs 0 = xs
+dropEvery xs n = map fst $ filter (\p -> (/= 0) $ (snd p) `mod` n) $ zip xs [1..]
 
 main :: IO ()
 main = hspec $ do
